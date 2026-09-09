@@ -846,3 +846,15 @@ void boot_magic_set(uint32_t magic) { (void)magic; }
 void SystemClock_Config(uint8_t new_oc_level) { (void)new_oc_level; }
 void uptime_inc(void) {}
 uint32_t uptime_get(void) { return host_platform_ticks_ms(); }
+
+/* rg_rtc.h stand-ins used by Tamagotchi save fast-forward / clock sync. */
+uint64_t GW_GetCurrentMillis(void)
+{
+    return (uint64_t)host_platform_ticks_ms();
+}
+
+uint8_t GW_GetCurrentSubSeconds(void)
+{
+    /* Approximate 0..255 fraction of a second from ms. */
+    return (uint8_t)((host_platform_ticks_ms() % 1000) * 256 / 1000);
+}

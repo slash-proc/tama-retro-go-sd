@@ -18,9 +18,9 @@ int main(int argc, char **argv)
 {
     const char *title =
 #if defined(PROJECT_KIND_HOMEBREW)
-        "Retro-Go Homebrew (host)";
+        "Tamagotchi P1 (host)";
 #else
-        "Retro-Go Core (host)";
+        "Tamagotchi P1 Core (host)";
 #endif
     const char *rom = getenv("HOST_ROM");
 

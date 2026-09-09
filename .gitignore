@@ -10,3 +10,6 @@
 host_saves/
 .DS_Store
 __pycache__/
+src/rom/*.b
+src/assets/cover_src.jpg
+src/assets/cover_preview.jpg
