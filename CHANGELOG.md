@@ -1,6 +1,6 @@
 # Changelog
 
-## [V0.0.1]
+## [v0.0.1]
 
 Tamagotchi P1 as a standalone GWHB homebrew (TamaLIB port from Retro-Go SD).
 
