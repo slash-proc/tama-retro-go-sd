@@ -50,6 +50,8 @@ CORE_C_DEFS := \
 PACKED_BIN := TamagotchiP1.bin
 HB_NAME    := Tamagotchi P1
 COVER_SRC  := src/assets/cover.png
+# Published full size beside the release; the packed cover derives from it.
+COVER_FULL := $(COVER_SRC)
 COVER_JPG  := $(BUILD_DIR)/cover.jpg
 COVER_WIDTH  ?= 96
 COVER_HEIGHT ?= 96
@@ -116,12 +118,22 @@ endif
 
 all: pack
 
-.PHONY: print-PROJECT_KIND print-PACKED_BIN print-CORE_NAME print-DOCKER_IMAGE \
+.PHONY: print-PROJECT_KIND print-PACKED_BIN print-SIDECARS print-RO_BIN print-CORE_NAME \
+	print-COVER_FULL print-DOCKER_IMAGE \
 	print-TARGET_ELF print-TARGET_MAP print-CORE_VERSION
 print-PROJECT_KIND:
 	@echo $(PROJECT_KIND)
 print-PACKED_BIN:
 	@echo $(PACKED_BIN)
+# Extra device files installed beside PACKED_BIN, space separated. Empty here:
+# this homebrew is one file. RO_BIN is the older single-slot spelling, read for
+# every project so the shared stage_release.py needs no per-project variant.
+print-SIDECARS:
+	@echo $(SIDECARS)
+print-RO_BIN:
+	@echo $(RO_BIN)
+print-COVER_FULL:
+	@echo $(COVER_FULL)
 print-CORE_NAME:
 	@echo $(CORE_NAME)
 print-DOCKER_IMAGE:
