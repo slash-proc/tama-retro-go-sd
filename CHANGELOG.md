@@ -13,7 +13,7 @@ When you cut a release:
 CI reads the matching section and uses it as the GitHub Release notes. The tag
 is also used in staged asset names (`<binary>-<tag>.bin`, `<binary>-<tag>.zip`).
 
-## [Unreleased]
+## [v0.0.2] - 2026-09-12
 
 ### Added
 
@@ -30,6 +30,10 @@ is also used in staged asset names (`<binary>-<tag>.bin`, `<binary>-<tag>.zip`).
   targets exist so the shared script needs no per-project variant.
 - `print-COVER_FULL`, so the unscaled `src/assets/cover.png` is published beside
   the release next to the copy packed into the binary.
+- `gwrg.json` declares `originalSystem: "tamagotchi"`. The work came from
+  Bandai's 1996 LCD virtual pet, which no core here emulates -- the value space
+  for provenance is wider than `systems[].id` for exactly that reason. No
+  `originalName`: the title is already the work's own name.
 
 ## [v0.0.1]
 
